@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/* Animation de défilement automatique infini pour le carrousel mobile */
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1.5rem)); /* Décale toute la liste (1.5rem correspond au gap-6) */
+  }
+}
+
+/* Classe utilitaire à appliquer sur le conteneur */
+.animate-auto-scroll {
+  animation: autoScroll 40s linear infinite;
+}
