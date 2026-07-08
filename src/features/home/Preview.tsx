@@ -11,15 +11,15 @@ const FEATURED_PROJECTS = [
     title: "Switch Burkina",
     description: "Plateforme d'identification par carte NFC et de gestion de profils professionnels en temps réel. Développement d'une architecture full-stack permettant la lecture, l'écriture et la synchronisation instantanée de cartes de visite virtuelles pour les entreprises.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase", "NFC API"],
-    github: "https://github.com/BriceZongo",
-    demo: "#",
+    github: "https://github.com/Vlbvn",
+    demo: "https://switch-bf.vercel.app/",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "SegMe",
     description: "Application mobile de planification et de gestion de rendez-vous de services déployée sur le Google Play Store. Intégration d'une interface fluide avec Expo/EAS et implémentation en cours de l'API de paiement mobile BarkaPay pour sécuriser les transactions de services.",
     tags: ["React Native", "Expo", "EAS", "TypeScript", "Node.js", "BarkaPay API"],
-    github: "https://github.com/BriceZongo",
+    github: "https://github.com/Vlbvn",
     demo: "https://play.google.com/store",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop"
   }
