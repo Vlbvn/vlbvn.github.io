@@ -12,7 +12,7 @@ export default function Button({
   children,
   className = '',
   ...props
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-500/50 cursor-pointer select-none';
 

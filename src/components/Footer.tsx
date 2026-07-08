@@ -8,7 +8,6 @@ export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
 
-  // Le dégradé radial utilise var(--color-teal-500) pour une parfaite harmonie sur fond clair ou sombre
   const maskImage = useTransform(mouseX, (x) => `radial-gradient(120px circle at ${x}px 0px, var(--color-teal-500) 0%, transparent 100%)`);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -25,8 +24,8 @@ export default function Footer() {
     <footer 
       ref={footerRef}
       onMouseMove={handleMouseMove}
-      // Fond et bordures adaptatifs
-      className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900/60 mt-auto relative group/footer transition-colors duration-300"
+      // pb-28 sur mobile crée la zone tampon pour éviter le chevauchement du menu flottant, md:pb-8 restaure la marge normale sur PC
+      className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900/60 mt-auto relative group/footer transition-colors duration-300 pb-28 md:pb-0"
     >
       {/* BORDURE SOUDEE LUMINEUSE */}
       <motion.div 
@@ -37,7 +36,8 @@ export default function Footer() {
         className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 dark:from-teal-400 dark:via-cyan-400 dark:to-emerald-400 opacity-0 group-hover/footer:opacity-100 transition-opacity duration-500 pointer-events-none"
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+      {/* Ajustement du padding interne vertical : py-8 devient pt-8 pb-8 md:pb-8 */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 md:pb-8 relative z-10">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           
           {/* Gauche : Copyright */}
@@ -52,18 +52,16 @@ export default function Footer() {
 
           {/* Centre : Liens réseaux sociaux */}
           <div className="flex items-center gap-4">
-            {/* Email */}
             <a 
-              href="mailto:votre.email@exemple.com"
+              href="mailto:brice_zongo@yahoo.com"
               className="p-2 text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-teal-500/20 dark:hover:border-teal-500/20 transition-all duration-300 shadow-sm group"
               title="Email"
             >
               <Mail className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
             </a>
 
-            {/* LinkedIn */}
             <a 
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/zongo-brice-9a09562a1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-teal-500/20 dark:hover:border-teal-500/20 transition-all duration-300 shadow-sm group"
@@ -74,7 +72,6 @@ export default function Footer() {
               </svg>
             </a>
 
-            {/* GitHub */}
             <a 
               href="https://github.com/Vlbvn"
               target="_blank"
